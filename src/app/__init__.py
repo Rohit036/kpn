@@ -1,0 +1,1 @@
+"""Application package containing FastAPI entrypoints and API services."""
