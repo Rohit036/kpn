@@ -1,0 +1,5 @@
+endpoint=https://.azure.com/
+api_key=AACOGHnSt
+api_version=2024-12-01-preview
+gpt_deployment=gpt-4.1
+embedding_deployment=text-embedding-3-large
