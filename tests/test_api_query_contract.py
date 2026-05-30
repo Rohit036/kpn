@@ -55,3 +55,16 @@ def test_query_contract_with_mocked_orchestration(monkeypatch) -> None:
     assert isinstance(body["citations"], list)
     assert len(body["citations"]) == 1
     assert body["citations"][0]["url"] == "https://example.com/kpn-news"
+
+
+def test_query_rejects_empty_query_with_422() -> None:
+    payload = {
+        "query": "",
+        "top_k": 3,
+        "max_tool_rounds": 2,
+        "disable_log": True,
+    }
+
+    response = client.post("/query", json=payload)
+
+    assert response.status_code == 422
