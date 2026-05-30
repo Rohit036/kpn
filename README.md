@@ -106,7 +106,14 @@ docker run --rm -p 8000:8000 \
 	-v ./data:/app/data \
 	kpn-agent-api
 ```
+Run with Docker Compose (recommended for local development):
 
+```bash
+docker-compose up --build
+# or run detached:
+docker-compose up -d --build
+```
+Ensure `docker-compose.yml` mounts `./data` and loads your `.env` so the vector store and logs persist.
 Test:
 
 ```bash
